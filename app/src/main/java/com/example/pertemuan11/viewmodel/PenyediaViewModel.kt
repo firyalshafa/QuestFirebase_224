@@ -11,3 +11,11 @@ import com.example.pertemuan11.repositori.AplikasiDataSiswa
 fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa = (
         this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiDataSiswa
         )
+
+
+object PenyediaViewModel {
+    val Factory = viewModelFactory {
+        // Initializer untuk HomeViewModel
+        initializer {
+            HomeViewModel(aplikasiDataSiswa().container.repositorySiswa)
+        }
