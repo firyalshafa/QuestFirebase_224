@@ -68,6 +68,7 @@ dependencies {
 
     // Tambahkan ini agar library Icons dikenali
     implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.ui)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
