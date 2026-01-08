@@ -19,3 +19,8 @@ object PenyediaViewModel {
         initializer {
             HomeViewModel(aplikasiDataSiswa().container.repositorySiswa)
         }
+
+        // Initializer untuk EntryViewModel
+        initializer {
+            EntryViewModel(aplikasiDataSiswa().container.repositorySiswa)
+        }
