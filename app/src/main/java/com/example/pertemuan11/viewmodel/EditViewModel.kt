@@ -17,7 +17,6 @@ import kotlinx.coroutines.launch
 class EditViewModel(savedStateHandle: SavedStateHandle, private val repositorySiswa:
 RepositorySiswa
 ): ViewModel() {
-
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
         private set
 
@@ -29,6 +28,11 @@ RepositorySiswa
             uiStateSiswa = repositorySiswa.getSatuSiswa(idSiswa)!!
                 .toUiStateSiswa(true)
         }
+    }
+    fun updateUiState(detailSiswa: DetailSiswa) {
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput
+                (detailSiswa))
     }
     private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa ): Boolean {
         return with(uiState) {
